@@ -1,4 +1,4 @@
-## consolegen 后台管理系统生成器test
+## consolegen 后台管理系统生成器-内部开放版
 
 ### 运行步骤：
 

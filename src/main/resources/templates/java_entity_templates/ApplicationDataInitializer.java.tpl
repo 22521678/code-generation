@@ -58,7 +58,7 @@ public class ApplicationDataInitializer implements ApplicationRunner, Applicatio
             new String[]{"0", "用户管理", "el-icon-user", "/pages/user/list"},
             new String[]{"0", "角色管理", "el-icon-present", "/pages/role/list"},
             new String[]{"0", "权限管理", "el-icon-c-scale-to-original", "/pages/privilege/list"},
-
+${entity_menu_items}
             new String[]{"0", "地区管理", "el-icon-map-location", "/pages/region/list"},
             new String[]{"0", "系统设置", "el-icon-setting", "/pages/settings/add"}
     };

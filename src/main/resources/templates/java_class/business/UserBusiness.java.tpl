@@ -2,13 +2,13 @@ package ${packageName}.business;
 
 import ${packageName}.bean.User;
 import ${packageName}.bean.UserRole;
+import ${packageName}.interceptor.SessionManager;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.mayanjun.core.Assert;
 import org.mayanjun.core.ServiceException;
 import org.mayanjun.myjack.api.query.Query;
 import org.mayanjun.myjack.api.query.QueryBuilder;
-import org.mayanjun.util.Encryptions;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +24,9 @@ import java.util.List;
  */
 @Component
 public class UserBusiness extends BaseBusiness<User> {
+
+    @Autowired
+    private SessionManager sessionManager;
 
     private void saveUserRoles(Long uid, Long rids[], User user) {
         if (rids != null && rids.length > 0) {
@@ -47,7 +50,7 @@ public class UserBusiness extends BaseBusiness<User> {
         Assert.notBlank(entity.getUsername(), "用户名不能为空");
 
         if (StringUtils.isNotBlank(entity.getPassword())) {
-            String enc = Encryptions.encrypt(entity.getPassword(), config.keyPairStore());
+            String enc = sessionManager.encryptPassword(entity.getPassword());
             entity.setPassword(enc);
         }
     }

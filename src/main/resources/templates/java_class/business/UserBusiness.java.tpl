@@ -4,6 +4,7 @@ import ${packageName}.bean.User;
 import ${packageName}.bean.UserRole;
 import ${packageName}.interceptor.SessionManager;
 import org.apache.commons.collections.CollectionUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.apache.commons.lang3.StringUtils;
 import org.mayanjun.core.Assert;
 import org.mayanjun.core.ServiceException;

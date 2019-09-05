@@ -2,10 +2,10 @@
 	"projectName":"console-gen-demo",
 	"packageName": "com.jd.gentest",
 	"groupId":"com.jd.zteam",
-	"systemName":"北京某工厂",
+	"systemName":"HOME POWER",
 	"domain":"m.com",
-	"companyName":"某某公司",
-	"outDir": "/Users/mayanjun/Desktop",
+	"companyName":"SMART BAR",
+	"outDir": "C:\\Users\\zhangyanwu\\Desktop\\home1",
 	
 	"entityConfigs": [
 		{
@@ -67,6 +67,45 @@
 					"name": "address",
 					"comment": "地址",
 					"databaseLength": "32"
+				},
+				{
+					"name": "description",
+					"comment": "描述",
+					"databaseLength": "200"
+				}
+			]
+		},
+		{
+			"className": "Book",
+			"comment": "图书",
+			"exportSupported": true,
+			"fieldConfigs": [
+				{
+					"name": "name",
+					"databaseLength": "64",
+					"indexed": true,
+					"comment": "图书名称"
+				},
+				{
+					"name": "type",
+					"javaType": "category",
+					"comment": "版本",
+					"enumValues": ["COMPUTER", "计算机", "CULTURE", "人文"]
+				},
+				{
+					"name": "ASIN",
+					"comment": "ASIN",
+					"databaseLength": "64"
+				},
+				{
+					"name": "file",
+					"comment": "快照",
+					"inputType":"FILE_IMAGE"
+				},
+				{
+					"name": "book",
+					"comment": "文件",
+					"inputType":"FILE_ORDINARY"
 				},
 				{
 					"name": "description",
